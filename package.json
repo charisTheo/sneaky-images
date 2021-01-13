@@ -1,11 +1,16 @@
 {
   "name": "sneaky-images",
   "version": "1.0.0",
+  "homepage": "https://sneaky-images.vercel.app/",
   "scripts": {
-    "build": "next build",
+    "dev": "npx next dev",
+    "build": "npx next build",
     "start": "NODE_ENV=production node server.js"
   },
   "dependencies": {
+    "@material-ui/core": "^4.11.2",
+    "@material-ui/icons": "^4.11.2",
+    "@material-ui/lab": "^4.0.0-alpha.57",
     "copy-webpack-plugin": "^5.1.2",
     "next": "^10.0.2",
     "next-workbox-webpack-plugin": "^2.1.1",
@@ -13,5 +18,17 @@
     "react": "^16.14.0",
     "react-dom": "^16.14.0",
     "workbox-webpack-plugin": "^4.3.1"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
   }
 }
