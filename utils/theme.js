@@ -8,6 +8,7 @@ import {
     lightGreen,
     red as MuiRed
 } from '@material-ui/core/colors';
+import { Opacity } from '@material-ui/icons';
 
 export const primary = blue[500]; // * #2196f3
 export const primaryLight = blue[200];
@@ -15,6 +16,7 @@ export const primaryDark = blue[900];
 export const secondary = blueGrey[500]; // * #607d8b
 export const secondaryLight = blueGrey[200]; // * #b0bec5
 export const secondaryDark= blueGrey[900]; // * #263238
+export const secondary60 = "#607d8b90";
 // export const accent = '#673AB7';
 // export const accentLight = '#7e57c2';
 // export const accentDark = '#4527a0';
@@ -54,7 +56,55 @@ const theme = createMuiTheme({
                 color: secondaryDark,
             },
         },
-
+        MuiFormHelperText: {
+            root: {
+                color: secondary,
+                marginBottom: "1em"
+            }
+        },
+        MuiFormLabel: {
+            colorSecondary: {
+                color: secondary
+            }
+        },
+        MuiButton: {
+            root: {
+                "&$disabled": {
+                    border: `1px solid ${secondary60}`,
+                    color: secondary60
+                },
+            },
+            textPrimary: {
+                color: primary
+            },
+            outlinedPrimary: {
+                color: primary,
+                borderColor: primary,
+                '&:hover': {
+                    '@media (hover: none)': {
+                        borderColor: primary,
+                    },
+                },
+            },
+            containedPrimary: {
+                backgroundColor: primary,
+                '&:hover': {
+                    backgroundColor: primaryDark,
+                    '@media (hover: none)': {
+                        backgroundColor: primary,
+                    },
+                },
+            },
+            containedSecondary: {
+                backgroundColor: secondary,
+                '&:hover': {
+                    backgroundColor: secondaryLight,
+                    '@media (hover: none)': {
+                        backgroundColor: secondary,
+                    },
+                },
+            }
+        }
         // MuiChip: {
         //     root: {
         //         padding: 3
@@ -133,38 +183,6 @@ const theme = createMuiTheme({
     //             color: white
     //         }
     //     },
-    //     MuiButton: {
-    //         textPrimary: {
-    //             color: primary
-    //         },
-    //         outlinedPrimary: {
-    //             color: primary,
-    //             borderColor: primary600,
-    //             '&:hover': {
-    //                 '@media (hover: none)': {
-    //                     borderColor: primary,
-    //                 },
-    //             },
-    //         },
-    //         containedPrimary: {
-    //             backgroundColor: primary,
-    //             '&:hover': {
-    //                 backgroundColor: primaryDark,
-    //                 '@media (hover: none)': {
-    //                     backgroundColor: primary,
-    //                 },
-    //             },
-    //         },
-    //         containedSecondary: {
-    //             backgroundColor: secondary,
-    //             '&:hover': {
-    //                 backgroundColor: secondaryLight,
-    //                 '@media (hover: none)': {
-    //                     backgroundColor: secondary,
-    //                 },
-    //             },
-    //         }
-    //     }
     }
 });
 
